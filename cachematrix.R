@@ -5,6 +5,7 @@
 
 ## this function will create a matrix and stores it's 
 ## inverse matrix
+## Digbijoy Mitra
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
