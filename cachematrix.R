@@ -1,11 +1,14 @@
-## we have to calculate inverse of a matrix
+## I have recreated the program with standard way as the previous 
+## code i have submitted is rejected in peer review
+## only changing mean() with solve()
+## rest of the code is copied from example given by rdpeng
 
+## we have to calculate inverse of a matrix
 ## if the inverse is already calculated and the matrix 
 ## is not changed the result will be come from cache
 
 ## this function will create a matrix and stores it's 
 ## inverse matrix
-## Digbijoy Mitra
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -33,22 +36,8 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  ## checking if it is valid square matrix
-  if (nrow(data)!=ncol(data)){
-    message("matrix is not square")
-    invisible(0)
-  }
-  else {
-    ## checking if the determinant is zero
-    if ((1/determinant(data)$modulus[1])==0){
-      message("determinant is zero")
-      invisible(0)
-    }
-    ## calculate result
-    else{
-      m <- solve(data, ...)
-      x$setmatrix(m)
-      m
-    }
-  }
+  ## calculating the inverse of the given matrix
+  m <- solve(data, ...)
+  x$setmatrix(m)
+  m
 }
